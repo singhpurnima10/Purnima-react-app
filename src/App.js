@@ -1,8 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from 'redux'
+import logo from "./logo.svg";
+import "./App.css";
+import { addUser } from './redux/action'
 
-function App() {
+function App(props) {
+  console.log(props,"propssssssssssss")
   return (
     <div className="App">
       <header className="App-header">
@@ -18,9 +22,18 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={props.user1("helooooooooooo")}>click me</button>
       </header>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  // const users = state.userDataReducer;
+  const data ="dataaa"
+  return data;
+};
+const mapDispatchToProps = dispatch => {
+  user1: () => dispatch(addUser())
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);
