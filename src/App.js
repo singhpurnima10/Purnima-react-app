@@ -22,7 +22,7 @@ function App(props) {
         >
           Learn React
         </a>
-        <button onClick={props.user1("helooooooooooo")}>click Purnima</button>
+        <button onClick={props.user1("helooooooooooo")}>click me</button>
       </header>
     </div>
   );
